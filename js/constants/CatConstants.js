@@ -1,0 +1,7 @@
+module.exports = {
+    CAT_EDIT: 'CAT_EDIT',
+    CAT_EDIT_CANCEL: 'CAT_EDIT_CANCEL',
+    CAT_SAVE: 'CAT_SAVE',
+    CAT_DELETE: 'CAT_DELETE',
+    CATS_INDEX: 'CATS_INDEX'
+};
