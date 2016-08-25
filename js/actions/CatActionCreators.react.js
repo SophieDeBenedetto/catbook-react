@@ -1,4 +1,3 @@
-// Todo actions
 import AppDispatcher from '../dispatcher/AppDispatcher.react.js'
 import CatConstants from '../constants/CatConstants.js'
 import AppAPI from '../utils/AppAPI.react.js'

@@ -1,4 +1,3 @@
-// Todo server actions
 import AppDispatcher from '../dispatcher/AppDispatcher.react.js'
 import CatConstants from '../constants/CatConstants.js'
 
