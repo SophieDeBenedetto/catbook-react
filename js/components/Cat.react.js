@@ -1,6 +1,7 @@
 import React from 'react';
 import {Component, PropTypes} from 'react';
 import CatDetails from './CatDetails.react.js'
+import HobbyList from './HobbyList.react.js'
 
 
 var hidden = {
@@ -21,23 +22,14 @@ module.exports = class Cat extends React.Component {
   render() {
     var styleType = this.state.showDetails ? {} : hidden
     var cat = this.props.cat
-    debugger;
     return (
       <div onClick={this.showDetails}>
-        Hello {cat.attributes.name}
+        Hello {cat.name}
         <div style={styleType}>
-          <p>
-            breed: {cat.attributes.breed}
-          </p>
-          <p>
-            weight: {cat.attributes.weight}
-          </p>
-          <p>
-            temperament: {cat.attributes.temperament}
-          </p>
-          <p>
-            <HobbyList hobbies={cat.hobbies} \>
-          </p>
+          <CatDetails cat={cat} />
+          <div>
+            <HobbyList hobbies={cat.hobbies} />
+          </div>
         </div>
       </div>
     )
