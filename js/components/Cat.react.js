@@ -35,6 +35,9 @@ module.exports = class Cat extends React.Component {
           <p>
             temperament: {cat.attributes.temperament}
           </p>
+          <p>
+            <HobbyList hobbies={cat.hobbies} \>
+          </p>
         </div>
       </div>
     )

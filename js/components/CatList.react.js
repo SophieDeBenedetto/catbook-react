@@ -24,8 +24,7 @@ module.exports = class CatList extends React.Component {
   }
 
   
-  catElement = this::(cat) => {
-    debugger;
+  catElement = (cat) => {
     return <Cat cat={cat} />
   }
 
@@ -36,8 +35,7 @@ module.exports = class CatList extends React.Component {
         <h1>HI</h1>
       )
     } else {
-      debugger;
-      var catList = this.state.cats.data.map(this.catElement)
+      var catList = this.state.cats.map(this.catElement)
       return (
         <ul>
           {catList}
