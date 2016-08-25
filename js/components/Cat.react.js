@@ -23,14 +23,14 @@ module.exports = class Cat extends React.Component {
     var styleType = this.state.showDetails ? {} : hidden
     var cat = this.props.cat
     return (
-      <div onClick={this.showDetails}>
-        Hello {cat.name}
-        <div style={styleType}>
-          <CatDetails cat={cat} />
-          <div>
+      <div>
+        <li onClick={this.showDetails} className="col-md-12 list-group-item">
+          <h4>{cat.name}</h4>
+          <div style={styleType} className="col-md-12">
+            <CatDetails cat={cat} />
             <HobbyList hobbies={cat.hobbies} />
           </div>
-        </div>
+        </li>
       </div>
     )
 

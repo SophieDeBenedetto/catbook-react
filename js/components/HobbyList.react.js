@@ -16,7 +16,7 @@ module.exports = class CatList extends React.Component {
       var hobbyList = this.props.hobbies.map(this.hobbyElement)
       return (
         <div>
-          <h4>hobbies:</h4>
+          <h5>hobbies:</h5>
           <ul>
             {hobbyList}
           </ul>

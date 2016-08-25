@@ -32,12 +32,12 @@ module.exports = class CatList extends React.Component {
     let cats = this.state.cats
     if (cats.length === 0) {
       return (
-        <h1>HI</h1>
+        <h1>There are no cats :(</h1>
       )
     } else {
       var catList = this.state.cats.map(this.catElement)
       return (
-        <ul>
+        <ul className="list-group">
           {catList}
         </ul>
       )

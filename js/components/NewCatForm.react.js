@@ -44,27 +44,29 @@ module.exports = class NewCatForm extends React.Component {
 
   render() {
     return (
-      <form className="form-inline" onSubmit={this.handleFormSubmit}>
+      <form onSubmit={this.handleFormSubmit}>
        <h4>New Cat</h4>
         <div className="form-group">
-          <label>name</label>
+          <br />
           <input 
             className="form-control" 
             value={this.state.inputNameValue}
+            placeholder='name'
             onChange={this.onNameInputChange} />
-
-            <label>breed</label>
+          <br />
           <input 
             className="form-control" 
+            placeholder='breed'
             value={this.state.inputBreedValue}
             onChange={this.onBreedInputChange} />
-
-            <label>Temperament</label>
+          <br />
           <input 
             className="form-control" 
+            placeholder='temperament'
             value={this.state.inputTemperamentValue}
             onChange={this.onTemperamentInputChange} />
-          <input type="Submit" value="submit" />
+            <br />
+          <input type="Submit" value="submit" className="btn btn-default" />
         </div>
       </form>
     )
