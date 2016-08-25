@@ -10,10 +10,6 @@ module.exports = class NewCatForm extends React.Component {
     this.state = {cat: {}}
   }
 
-  // toggleCreating = () => {
-  //   this.setState({cat: this.state.cat, isCreating: !this.state.isCreating})
-  // }
-
   getCat = () => {
     return this.state.cat;
   }
