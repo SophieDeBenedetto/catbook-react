@@ -6,6 +6,7 @@ import AppAPI from '../utils/AppAPI.react.js'
 const CHANGE_EVENT = 'change';
 var cats = [];
 var error = {};
+var isCreating = false
 
 function setCats(catsPayload) {
   cats = catsPayload;
@@ -17,6 +18,10 @@ function addCat(cat) {
 
 function setError(err) {
   error = err;
+}
+
+function finishCreating() {
+  isCreating = false
 }
 
 function emitChange() {
@@ -36,6 +41,10 @@ class CatStore extends EventEmitter {
 
   getAll() {
     return cats;
+  }
+
+  getIsCreating() {
+    return isCreating;
   }
 
   createCat(cat) {
@@ -72,6 +81,7 @@ CatStore.dispatchToken = AppDispatcher.register(action => {
     break;
   case CatConstants.CAT_CREATED:
     addCat(action.action.cat);
+    finishCreating();
     emitChange();
     break;
   case 'API_ERROR':

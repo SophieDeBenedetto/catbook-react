@@ -10,6 +10,10 @@ module.exports = class NewCatForm extends React.Component {
     this.state = {cat: {}}
   }
 
+  // toggleCreating = () => {
+  //   this.setState({cat: this.state.cat, isCreating: !this.state.isCreating})
+  // }
+
   getCat = () => {
     return this.state.cat;
   }
@@ -43,33 +47,40 @@ module.exports = class NewCatForm extends React.Component {
   }
 
   render() {
-    return (
-      <form onSubmit={this.handleFormSubmit}>
-       <h4>New Cat</h4>
-        <div className="form-group">
-          <br />
-          <input 
-            className="form-control" 
-            value={this.state.inputNameValue}
-            placeholder='name'
-            onChange={this.onNameInputChange} />
-          <br />
-          <input 
-            className="form-control" 
-            placeholder='breed'
-            value={this.state.inputBreedValue}
-            onChange={this.onBreedInputChange} />
-          <br />
-          <input 
-            className="form-control" 
-            placeholder='temperament'
-            value={this.state.inputTemperamentValue}
-            onChange={this.onTemperamentInputChange} />
-            <br />
-          <input type="Submit" value="submit" className="btn btn-default" />
+    if (this.props.isCreating) {   
+      return (
+        <div>
+          <form onSubmit={this.handleFormSubmit}>
+           <h4>New Cat</h4>
+            <div className="form-group">
+              <br />
+              <input 
+                className="form-control" 
+                value={this.state.inputNameValue}
+                placeholder='name'
+                onChange={this.onNameInputChange} />
+              <br />
+              <input 
+                className="form-control" 
+                placeholder='breed'
+                value={this.state.inputBreedValue}
+                onChange={this.onBreedInputChange} />
+              <br />
+              <input 
+                className="form-control" 
+                placeholder='temperament'
+                value={this.state.inputTemperamentValue}
+                onChange={this.onTemperamentInputChange} />
+                <br />
+              <input type="Submit" value="submit" className="btn btn-default" />
+            </div>
+          </form>
+          <button onClick={this.props.toggleCreating}> cancel </button>
         </div>
-      </form>
-    )
+      )
+    } else {
+      return <button onClick={this.props.toggleCreating}>+ cat</button>
+    }
     
   }
 }
