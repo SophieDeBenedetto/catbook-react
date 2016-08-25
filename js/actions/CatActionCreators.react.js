@@ -5,7 +5,17 @@ import AppAPI from '../utils/AppAPI.react.js'
 module.exports = {
 
   catsIndex: function() {
-    AppAPI.get('http://localhost:5000/api/v1/cats')
+    AppDispatcher.handleViewAction({
+      actionType: CatConstants.CATS_INDEX
+    })
+  },
+
+
+  saveCat: function(cat) {
+    AppDispatcher.handleViewAction({
+      actionType: CatConstants.CAT_SAVE,
+      cat: cat
+    });
   }
 
   // addItem: function() {

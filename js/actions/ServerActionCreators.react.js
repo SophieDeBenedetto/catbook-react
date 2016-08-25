@@ -3,10 +3,24 @@ import CatConstants from '../constants/CatConstants.js'
 
 module.exports = {
 
-  receiveData: function(response) {
+  receiveCatIndex: function(response) {
     AppDispatcher.handleServerAction({
-      actionType: CatConstants.CATS_INDEX,
+      actionType: CatConstants.HANDLE_CATS_INDEX,
       response: response
     });
   },
+
+  receiveCreateCatResponse: function(response) {
+    AppDispatcher.handleServerAction({
+      actionType: CatConstants.CAT_CREATED,
+      cat: response
+    })
+  },
+
+  receiveAPIError: function(err) {
+    AppDispatcher.handleServerAction({
+      actionType: 'API_ERROR',
+      response: err
+    })
+  }
 };
